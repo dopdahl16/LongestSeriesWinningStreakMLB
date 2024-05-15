@@ -70,23 +70,23 @@ def GetTeamSeriesHistory(id,year):
 
 
 
-# teamIds = []
-# teamIdDict = {}
-# teamAbbreviationDict = {}
-# allTeams = statsapi.get('teams', {})
-# for team in allTeams['teams']:
-#     if team['sport']['id'] == 1:
-#         teamIds.append(team['id'])
-#         teamIdDict[team['id']] = team['name']
-#         teamAbbreviationDict[team['id']] = team['abbreviation']
-
-
-
-teamAbbreviationDict = {}
-teamAbbreviationDict[142] = 'MIN'
-teamIds = [142]
+teamIds = []
 teamIdDict = {}
-teamIdDict[142] = 'Minnesota Twins'
+teamAbbreviationDict = {}
+allTeams = statsapi.get('teams', {})
+for team in allTeams['teams']:
+    if team['sport']['id'] == 1:
+        teamIds.append(team['id'])
+        teamIdDict[team['id']] = team['name']
+        teamAbbreviationDict[team['id']] = team['abbreviation']
+
+
+
+# teamAbbreviationDict = {}
+# teamAbbreviationDict[142] = 'MIN'
+# teamIds = [142]
+# teamIdDict = {}
+# teamIdDict[142] = 'Minnesota Twins'
 
 allTeamsSeriesHistory = {}
 
@@ -94,13 +94,12 @@ for id in teamIds:
     allTeamsSeriesHistory[teamIdDict[id]] = []
 
 for id in teamIds:
-    for year in range(1980, 1990):
+    for year in range(1857, 2024):
         allTeamsSeriesHistory[teamIdDict[id]] += GetTeamSeriesHistory(id,year)
         time.sleep(30)
-        print()
 
 
-f = open("Twins1980-1990SeriesRecord.txt", "w")
+f = open("AllTeams1857-2023SeriesRecord.txt", "w")
 for team, history in allTeamsSeriesHistory.items():
     f.write('%s:%s\n' % (team, history))
 f.close()
