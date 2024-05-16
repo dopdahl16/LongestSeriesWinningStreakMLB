@@ -1,0 +1,7 @@
+https://github.com/dopdahl16/LongestSeriesWinningStreakMLB
+https://github.com/toddrob99/MLB-StatsAPI/wiki/All-Functions
+https://github.com/toddrob99/MLB-StatsAPI/wiki/Function:-schedule
+https://github.com/toddrob99/MLB-StatsAPI/wiki/Endpoints
+https://www.baseball-reference.com/teams/MIN/1989-schedule-scores.shtml#all_team_schedule
+https://statsapi.mlb.com/api/v1.1/game/179480/feed/live
+https://statsapi.mlb.com/api/v1/schedule/142
